@@ -31,7 +31,7 @@ jobs:
         run: |
           
           if ("${{ vars.ENVIRONMENT }}" -eq 'prd') {
-            if("${{ vars.ENVIRONMENT }}" -eq 'prd') {
+            if("${{ vars.ENVIRONMENT }}" == 'prd') {
                 echo "this success"
             }
           }
