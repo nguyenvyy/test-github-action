@@ -27,6 +27,7 @@ jobs:
     
       - name: Test
         shell: pwsh
+        if: ${{ inputs.environment }} == 'prd'
         run: |
           $environment2 = ${{ inputs.environment }}
           if ($environment == 'prd') {
