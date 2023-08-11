@@ -28,8 +28,8 @@ jobs:
       - name: Test
         shell: pwsh
         run: |
-          if ("${{ env.environment }}" == 'prd') {
+          if ("${{ env.environment }}" -eq 'prd') {
             if(${{ env.environment }} == 'prd') {
-              
+
             }
           }
