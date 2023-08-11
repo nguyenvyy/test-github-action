@@ -42,7 +42,6 @@ jobs:
       - name: Test
         shell: pwsh
         run: |
-          $outputEnvironment = "${{ vars.ENVIRONMENT }}"
           if ($outputEnvironment -eq 'prd') {
             if($outputEnvironment == 'prd') {
                 echo "this success"
