@@ -29,6 +29,6 @@ jobs:
         shell: pwsh
         if: ${{ inputs.environment }} == '1prd'
         run: |
-          if ("${{ inputs.environment }}" -eq 'prd') {
+          if ("${{ inputs.environment }}" == 'prd') {
             echo success
           }
