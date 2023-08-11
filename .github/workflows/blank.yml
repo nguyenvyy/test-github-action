@@ -50,3 +50,6 @@ jobs:
                 echo "this success"
             }
           }
+          elseif ($outputEnvironment2) {
+            echo "this failed 2"
+          }
