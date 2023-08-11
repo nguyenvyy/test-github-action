@@ -1,0 +1,19 @@
+name: Deploy Application
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Test
+        shell: pwsh
+        run: |
+          $environment = ${{ inputs.environment }}
+          if ($environment == 'prd') {
+            echo success
+          }
