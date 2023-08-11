@@ -27,9 +27,9 @@ jobs:
     
       - name: Test
         shell: pwsh
-        if: ${{ inputs.environment }} == '1prd'
         run: |
-          $env = prd
-          if ("${{ env }}" == 'prd') {
-            echo success
+          if ("${{ env.environment }}" == 'prd') {
+            if(${{ env.environment }} == 'prd') {
+              
+            }
           }
