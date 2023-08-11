@@ -42,7 +42,10 @@ jobs:
       - name: Test
         shell: pwsh
         run: |
-          if ($outputEnvironment -eq 'prd') {
+          $outputEnvironment = "${{ vars.ENVIRONMENT }}"
+          $outputEnvironment2 = "1"
+
+          if ($outputEnvironment -eq 'prd' -and $outputEnvironment2 -eq '1') {
             if($outputEnvironment == 'prd') {
                 echo "this success"
             }
