@@ -30,6 +30,6 @@ jobs:
         if: ${{ inputs.environment }} == 'prd'
         run: |
           $environment2 = ${{ inputs.environment }}
-          if ($environment == 'prd') {
+          if ($environment -eq 'prd') {
             echo success
           }
