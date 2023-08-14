@@ -51,14 +51,8 @@ jobs:
       - name: Test
         shell: pwsh
         run: |
-          $outputEnvironment = "${{ needs.prepare.outputs.environment }}"
-          $outputEnvironment2 = "${{ needs.prepare.outputs.sequence }}"
+          $envChar = "${{ vars.ENVIRONMENT_CHAR }}"
+          $appUrl = "${{ vars.UMBRACO_APP_URL }}"
 
-          if ($outputEnvironment -eq 'prd' -and $outputEnvironment2 -eq '1') {
-            if($outputEnvironment == 'prd') {
-                echo "this success"
-            }
-          }
-          elseif ($outputEnvironment2) {
-            echo "this failed 2"
-          }
+          echo "this is ${ appUrl }"
+
