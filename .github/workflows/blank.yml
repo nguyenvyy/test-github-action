@@ -30,7 +30,7 @@ jobs:
       - name: Naming
         id: naming
         run: |
-          $environment = prd
+          $environment = 'prd'
           $sequence = 1
           echo "sequence=$sequence" >> $env:GITHUB_OUTPUT
           echo "environment=$environment" >> $env:GITHUB_OUTPUT
