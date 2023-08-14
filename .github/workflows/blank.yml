@@ -66,5 +66,5 @@ jobs:
           $envChar = "${{ vars.ENVIRONMENT_CHAR }}"
           $appUrl = "${{ vars.UMBRACO_APP_URL }}"
           $c = "web-${envChar}-ae-website-cms-cdne${envChar}"
-          echo c
+          echo "c=$c" >> $env:GITHUB_OUTPUT
 
