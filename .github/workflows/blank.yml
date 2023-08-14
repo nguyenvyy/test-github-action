@@ -26,8 +26,8 @@ jobs:
       - name: Naming
         id: naming
         run: |
-          $environment = 1
-          $sequence = 2
+          $environment = "1"
+          $sequence = "2"
           echo "sequence=$sequence" >> $env:GITHUB_OUTPUT
           echo "environment=$environment" >> $env:GITHUB_OUTPUT
           
