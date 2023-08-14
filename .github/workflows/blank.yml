@@ -52,7 +52,7 @@ jobs:
         shell: pwsh
         run: |
           $outputEnvironment = "${{ needs.prepare.outputs.environment }}"
-          $outputEnvironment2 = "${{ steps.naming.outputs.sequence }}"
+          $outputEnvironment2 = "${{ needs.prepare.outputs.sequence }}"
 
           if ($outputEnvironment -eq 'prd' -and $outputEnvironment2 -eq '1') {
             if($outputEnvironment == 'prd') {
