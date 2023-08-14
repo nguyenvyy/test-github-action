@@ -64,7 +64,7 @@ jobs:
         run: |
           $envChar = "${{ vars.ENVIRONMENT_CHAR }}"
           $appUrl = "${{ vars.UMBRACO_APP_URL }}"
-          $c = "test $envChar $appUrl"
+          $c = "test ${envChar} ${appUrl}"
           Write-Output $c
           echo "c=$c" >> $env:GITHUB_OUTPUT
 
