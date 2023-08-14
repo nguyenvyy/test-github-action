@@ -55,4 +55,22 @@ jobs:
           $appUrl = "${{ vars.UMBRACO_APP_URL }}"
 
           echo "this is ${ appUrl }"
+  build-test:
+    needs: prepare
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+    environment: tst
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v3
+    
+      - name: Test
+        shell: pwsh
+        run: |
+          $envChar = "${{ vars.ENVIRONMENT_CHAR }}"
+          $appUrl = "${{ vars.UMBRACO_APP_URL }}"
+
+          echo "this is ${ appUrl }"
 
