@@ -23,10 +23,15 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
-      - name: Test
-        shell: pwsh
+      - name: Naming
+        id: naming
         run: |
-          $outputEnvironment = "${{ vars.ENVIRONMENT }}"
+          $environment = 1
+          $sequence = 2
+          echo "sequence=$sequence" >> $env:GITHUB_OUTPUT
+          echo "environment=$environment" >> $env:GITHUB_OUTPUT
+          
+          
   # This workflow contains a single job called "build"
   build:
     needs: prepare
@@ -42,8 +47,8 @@ jobs:
       - name: Test
         shell: pwsh
         run: |
-          $outputEnvironment = "${{ vars.ENVIRONMENT }}"
-          $outputEnvironment2 = "2"
+          $outputEnvironment = "${{ needs.prepare.outputs.environment }}"
+          $outputEnvironment2 = "${{ steps.naming.outputs.sequence }}"
 
           if ($outputEnvironment -eq 'prd' -and $outputEnvironment2 -eq '1') {
             if($outputEnvironment == 'prd') {
