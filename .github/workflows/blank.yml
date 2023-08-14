@@ -56,10 +56,9 @@ jobs:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
     environment: tst
-
-    # Steps represent a sequence of tasks that will be executed as part of the job
+    outputs:
+      c: ${{ steps.Test.outputs.c }}
     steps:
-    
       - name: Test
         shell: pwsh
         run: |
