@@ -54,7 +54,7 @@ jobs:
           $envChar = "${{ vars.ENVIRONMENT_CHAR }}"
           $appUrl = "${{ vars.UMBRACO_APP_URL }}"
 
-          echo "this is ${ appUrl }"
+          echo "this is" + ${ appUrl }
   build-test:
     needs: prepare
     # The type of runner that the job will run on
@@ -72,5 +72,5 @@ jobs:
           $envChar = "${{ vars.ENVIRONMENT_CHAR }}"
           $appUrl = "${{ vars.UMBRACO_APP_URL }}"
 
-          echo "this is ${{ appUrl }}"
+          echo "this is"
 
