@@ -66,5 +66,7 @@ jobs:
           $appUrl = "${{ vars.UMBRACO_APP_URL }}"
           $c = "test" + $envChar + $appUrl
           $d = "${ c }"
+          Write-Output $d
+          Write-Output $c
           echo "c=$c" >> $env:GITHUB_OUTPUT
 
