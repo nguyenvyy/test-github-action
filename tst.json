@@ -1,0 +1,13 @@
+{
+  "$schema": "./appsettings-schema.json",
+  "Umbraco": {
+    "CMS": {
+      "WebRouting": {
+        "UmbracoApplicationUrl" : "https://xxx-auth.com"
+      }
+    }
+  },
+  "Adfs": {
+    "Wtrealm": "https://xxx.com"
+  }
+}
